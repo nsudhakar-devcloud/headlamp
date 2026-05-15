@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: healamp
+  description: repo for metrics
+  annotations:
+    # CI/CD tab (github-actions plugin) keys off this annotation.
+    github.com/project-slug: nsudhakar-devcloud/headlamp
+    backstage.io/source-location: url:https://github.com/nsudhakar-devcloud/headlamp/tree/main/
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - python
+  links:
+    - url: https://github.com/nsudhakar-devcloud/headlamp
+      title: Source
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/platform
+  system: system:default/platform
