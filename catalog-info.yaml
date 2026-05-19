@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: healamp
-  description: k8s ui
+  name: headlamp
+  description: headlamp for k8s api
   annotations:
     # CI/CD tab (github-actions plugin) keys off this annotation.
     github.com/project-slug: nsudhakar-devcloud/headlamp
@@ -10,7 +10,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     # ArgoCD plugin — links this component to its ArgoCD apps.
     # ApplicationSet labels apps with platform.laerdal.com/service=<name>.
-    argocd/app-selector: platform.laerdal.com/service=healamp
+    argocd/app-selector: platform.laerdal.com/service=headlamp
     argocd/instance-name: argocd-prod
     # Platform annotations — read by Deploy Service / service-bootstrap templates.
     platform.laerdal.com/project: nrp
