@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: healamp
+  description: k8s ui
+  annotations:
+    # CI/CD tab (github-actions plugin) keys off this annotation.
+    github.com/project-slug: nsudhakar-devcloud/headlamp
+    backstage.io/source-location: url:https://github.com/nsudhakar-devcloud/headlamp/tree/main/
+    backstage.io/techdocs-ref: dir:.
+    # ArgoCD plugin — links this component to its ArgoCD apps.
+    # ApplicationSet labels apps with platform.laerdal.com/service=<name>.
+    argocd/app-selector: platform.laerdal.com/service=healamp
+    argocd/instance-name: argocd-prod
+    # Platform annotations — read by Deploy Service / service-bootstrap templates.
+    platform.laerdal.com/project: nrp
+    platform.laerdal.com/port: "8080"
+    platform.laerdal.com/health-path: /health
+    platform.laerdal.com/ecr-repo: 504971213146.dkr.ecr.us-east-1.amazonaws.com/nrp/headlamp
+    platform.laerdal.com/github-org: nsudhakar-devcloud
+  tags:
+    - python
+  links:
+    - url: https://github.com/nsudhakar-devcloud/headlamp
+      title: Source
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/nsudhakar-devcloud
+  system: system:default/nrp
